@@ -16,5 +16,5 @@ from {{cookiecutter.package_name}}.data.files import EXAMPLE_SDF_WITH_CHARGES
 def example_molecule_with_charges():
     """Example fixture demonstrating how data files can be accessed"""
     from openff.toolkit import Molecule
-    molecule = Molecule.from_file(EXAMPLE_SDF_WITH_CHARGES, file_format="sdf")
+    molecule = Molecule.from_file(EXAMPLE_SDF_WITH_CHARGES.resolve(), file_format="sdf")
     return molecule

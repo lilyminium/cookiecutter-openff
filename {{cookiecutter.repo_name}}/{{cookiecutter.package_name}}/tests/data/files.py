@@ -7,7 +7,7 @@ Use as ::
     from {{ cookiecutter.package_name }}.tests.data.files import EXAMPLE_SDF_WITH_CHARGES
     from openff.toolkit import Molecule
 
-    molecule = Molecule.from_file(EXAMPLE_SDF_WITH_CHARGES, file_format="sdf")
+    molecule = Molecule.from_file(EXAMPLE_SDF_WITH_CHARGES.resolve(), file_format="sdf")
 
 """
 

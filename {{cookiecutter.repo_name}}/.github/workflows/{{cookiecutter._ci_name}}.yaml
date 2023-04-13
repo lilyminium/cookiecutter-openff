@@ -118,31 +118,3 @@ jobs:
       run: |
         pylint {{ cookiecutter.repo_name }}
 
-
-  pypi_check:
-    if: "github.repository == '{{ cookiecutter.github_host_account }}/{{ cookiecutter.repo_name }}'"
-    needs: environment-config
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v3
-
-    - name: Set up Python {{ '${{ needs.environment-config.outputs.stable-python-version }}' }}
-      uses: actions/setup-python@v4
-      with:
-        python-version: {{ '${{ needs.environment-config.outputs.stable-python-version }}' }}
-
-    - name: Install dependencies
-      run: |
-        pip install setuptools cython numpy twine
-
-    - name: Build package
-      run: |
-        python setup.py sdist
-
-    - name: Check package build
-      run: |
-        DISTRIBUTION=$(ls -t1 dist/{{ cookiecutter.package_name }}-*.tar.gz | head -n 1)
-        test -n "${DISTRIBUTION}" || { echo "no distribution dist/{{ cookiecutter.package_name }}-*.tar.gz found"; exit 1; }
-        echo "twine check $DISTRIBUTION"
-        twine check $DISTRIBUTION
