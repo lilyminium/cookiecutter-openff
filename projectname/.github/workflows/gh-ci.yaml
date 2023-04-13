@@ -15,7 +15,7 @@ on:
 concurrency:
   # Specific group naming so CI is only cancelled
   # within same PR or on merge to main
-  group: {{ "${{ github.ref }}-${{ github.head_ref }}-${{ github.workflow }}" }}
+  group: ${{ github.ref }}-${{ github.head_ref }}-${{ github.workflow }}
   cancel-in-progress: true
 
 defaults:
@@ -26,7 +26,7 @@ jobs:
   environment-config:
     runs-on: ubuntu-latest
     outputs:
-      stable-python-version: {{ "${{ steps.get-python-version.outputs.python-version }}" }}
+      stable-python-version: ${{ steps.get-python-version.outputs.python-version }}
     steps:
       - uses: actions/checkout@v3
 
@@ -36,8 +36,8 @@ jobs:
           last-n-minor-release: 1
 
   main-tests:
-    if: "github.repository == '{{ cookiecutter.github_host_account }}/{{ cookiecutter.repo_name }}'"
-    runs-on: {{ '${{ matrix.os }}' }}
+    if: "github.repository == 'lily/projectname'"
+    runs-on: ${{ matrix.os }}
     strategy:
         fail-fast: false
         matrix:
@@ -58,7 +58,7 @@ jobs:
       with:
         environment-file: devtools/conda-envs/test_env.yaml
         extra-specs: |
-          {{ "python=${{ matrix.python-version }}" }}
+          python=${{ matrix.python-version }}
 
     - name: Install package
       run: |
@@ -75,18 +75,18 @@ jobs:
 
     - name: Run tests
       run: |
-        pytest -n 2 -v --cov={{ cookiecutter.package_name }} --cov-report=xml --color=yes {{ cookiecutter.package_name }}/tests/
+        pytest -n 2 -v --cov=projectname --cov-report=xml --color=yes projectname/tests/
 
     - name: codecov
       uses: codecov/codecov-action@v3
       with:
         file: coverage.xml
-        name: codecov-{{ '${{ matrix.os }}' }}-py{{ '${{ matrix.python-version }}' }}
+        name: codecov-${{ matrix.os }}-py${{ matrix.python-version }}
         verbose: True
 
 
   pylint_check:
-    if: "github.repository == '{{ cookiecutter.github_host_account }}/{{ cookiecutter.repo_name }}'"
+    if: "github.repository == 'lily/projectname'"
     needs: environment-config
     runs-on: ubuntu-latest
 
@@ -96,7 +96,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: {{ '${{ needs.environment-config.outputs.stable-python-version }}' }}
+        python-version: ${{ needs.environment-config.outputs.stable-python-version }}
 
     - name: Install Pylint
       run: |
@@ -108,21 +108,21 @@ jobs:
       env:
         PYLINTRC: .pylintrc
       run: |
-        pylint {{ cookiecutter.repo_name }}
+        pylint projectname
 
 
   pypi_check:
-    if: "github.repository == '{{ cookiecutter.github_host_account }}/{{ cookiecutter.repo_name }}'"
+    if: "github.repository == 'lily/projectname'"
     needs: environment-config
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
 
-    - name: Set up Python {{ '${{ needs.environment-config.outputs.stable-python-version }}' }}
+    - name: Set up Python ${{ needs.environment-config.outputs.stable-python-version }}
       uses: actions/setup-python@v4
       with:
-        python-version: {{ '${{ needs.environment-config.outputs.stable-python-version }}' }}
+        python-version: ${{ needs.environment-config.outputs.stable-python-version }}
 
     - name: Install dependencies
       run: |
@@ -134,7 +134,7 @@ jobs:
 
     - name: Check package build
       run: |
-        DISTRIBUTION=$(ls -t1 dist/{{ cookiecutter.package_name }}-*.tar.gz | head -n 1)
-        test -n "${DISTRIBUTION}" || { echo "no distribution dist/{{ cookiecutter.package_name }}-*.tar.gz found"; exit 1; }
+        DISTRIBUTION=$(ls -t1 dist/projectname-*.tar.gz | head -n 1)
+        test -n "${DISTRIBUTION}" || { echo "no distribution dist/projectname-*.tar.gz found"; exit 1; }
         echo "twine check $DISTRIBUTION"
         twine check $DISTRIBUTION
