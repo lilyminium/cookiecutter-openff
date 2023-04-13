@@ -1,0 +1,14 @@
+{
+    "project_name": "ProjectName",
+    "repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+    "package_name": "{{ cookiecutter.repo_name.lower().replace(' ', '_').replace('-', '_') }}",
+    "description": "A short description of the project.",
+    "github_username": "Your personal GitHub username",
+    "github_host_account": "GitHub account for hosting {{cookiecutter.repo_name}} (e.g. {{ cookiecutter.github_username }} or an organization account). Press Enter to use {{ cookiecutter.github_username }}",
+    "author_name": "Your name (or your organization/company/team)",
+    "author_email": "Your email (or your organization/company/team)",
+    "_openff_cc_version": 0.1,
+    "_ci_name": "gh-ci",
+    "_central_branch_name": "main",
+    "_copy_without_render": []
+}
