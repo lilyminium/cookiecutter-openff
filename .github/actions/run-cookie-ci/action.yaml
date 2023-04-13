@@ -7,11 +7,11 @@ inputs:
   target-repository:
     description: Target repository name
     required: true
-    default: mdakit-cookie
+    default: openff-cookie
   target-account:
     description: Target account name
     required: true
-    default: MDAnalysis
+    default: openforcefield
   github-username:
     description: GitHub username
     required: true
