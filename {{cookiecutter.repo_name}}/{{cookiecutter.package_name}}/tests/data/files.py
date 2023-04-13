@@ -15,9 +15,9 @@ __all__ = [
     "EXAMPLE_SDF_WITH_CHARGES",
 ]
 
-import importlib_resources
+import importlib
 
-data_directory = importlib_resources.files(
+data_directory = importlib.resources.files(
     "{{ cookiecutter.package_name }}") / "tests" / "data"
 
 EXAMPLE_SDF_WITH_CHARGES = data_directory / "C1CC1.sdf"
