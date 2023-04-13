@@ -13,7 +13,6 @@ def test_{{cookiecutter.package_name}}_imported():
     assert "{{cookiecutter.package_name}}" in sys.modules
 
 
-def test_mdanalysis_logo_length(mdanalysis_logo_text):
+def test_molecule_charges(example_molecule_with_charges):
     """Example test using a fixture defined in conftest.py"""
-    logo_lines = mdanalysis_logo_text.split("\n")
-    assert len(logo_lines) == 46, "Logo file does not have 46 lines!"
+    assert example_molecule_with_charges.partial_charges is not None

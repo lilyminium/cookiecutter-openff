@@ -9,12 +9,12 @@ Global pytest fixtures
 
 import pytest
 
-from {{cookiecutter.package_name}}.data.files import MDANALYSIS_LOGO
+from {{cookiecutter.package_name}}.data.files import EXAMPLE_SDF_WITH_CHARGES
 
 
 @pytest.fixture
-def mdanalysis_logo_text() -> str:
+def example_molecule_with_charges():
     """Example fixture demonstrating how data files can be accessed"""
-    with open(MDANALYSIS_LOGO, "r", encoding="utf8") as f:
-        logo_text = f.read()
-    return logo_text
+    from openff.toolkit import Molecule
+    molecule = Molecule.from_file(EXAMPLE_SDF_WITH_CHARGES, file_format="sdf")
+    return molecule

@@ -1,7 +1,6 @@
-# Cookiecutter for MDAnalysis-based packages
+# Cookiecutter for OpenFF-based packages
 [//]: # (Badges)
-[![GitHub Actions Build Status](https://github.com/MDAnalysis/cookiecutter-mdakit/actions/workflows/gh-ci.yaml/badge.svg)](https://github.com/MDAnalysis/cookiecutter-mdakit/actions?query=workflow%3A%22Cookiecutter+CI%22)
-[![Documentation Status](https://readthedocs.org/projects/cookiecutter-mdakit/badge/?version=latest)](https://www.mdanalysis.org/cookiecutter-mdakit)
+[![GitHub Actions Build Status](https://github.com/lilyminium/cookiecutter-openff/actions/workflows/gh-ci.yaml/badge.svg)](https://github.com/lilyminium/cookiecutter-openff/actions?query=workflow%3A%22Cookiecutter+CI%22)
 
 
 A [cookiecutter](https://github.com/audreyr/cookiecutter) template for those interested in developing
@@ -20,7 +19,7 @@ With [`cookiecutter` installed](https://cookiecutter.readthedocs.io/en/latest/in
 execute the following command inside the folder you want to create the skeletal repository. Follow the prompts or hit enter for the default options.
 
 ```bash
-cookiecutter gh:MDAnalysis/cookiecutter-mdakit
+cookiecutter gh:lilyminium/cookiecutter-openff
 ```
 
 Please see our documentation for more details on how to use the cookiecutter.
