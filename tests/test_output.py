@@ -10,8 +10,7 @@ def test_write_outputs(
     )
     project_name = "test_openff"
 
-    output_directory = test_output_directory / project_name
-    output_directory.mkdir(exist_ok=True)
+    test_output_directory.mkdir(exist_ok=True)
     kitter = CookiecutterOpenFF(
         project_name=project_name,
         repo_name="openff-cookie",
@@ -19,6 +18,6 @@ def test_write_outputs(
         github_username="test-user-account",
         github_host_account="openforcefield",
         description=description,
-        output_directory=str(output_directory.resolve()),
+        output_directory=str(test_output_directory.resolve()),
     )
     kitter.run()

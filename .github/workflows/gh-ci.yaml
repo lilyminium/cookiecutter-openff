@@ -72,7 +72,7 @@ jobs:
         if: ${{ matrix.os == 'ubuntu-latest' }}
         uses: ./.github/actions/run-cookie-ci
         with:
-          source-directory: ${{ env.OUTPUT_DIRECTORY }}/Test_with_condaforge-deps_and_ReadTheDocs/openff-cookie
+          source-directory: ${{ env.OUTPUT_DIRECTORY }}/test_openff/openff-cookie
 
       - name: Upload artifact
         if: ${{ matrix.os == 'ubuntu-latest' && matrix.last-n-minor-python-release == 0 }}
