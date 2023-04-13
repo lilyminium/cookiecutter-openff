@@ -68,11 +68,13 @@ jobs:
           
           pytest tests/ $PYTEST_FLAGS
 
+          ls *
+
       - name: Run cookie CI
         if: ${{ matrix.os == 'ubuntu-latest' }}
         uses: ./.github/actions/run-cookie-ci
         with:
-          source-directory: ${{ env.OUTPUT_DIRECTORY }}/test_openff/openff-cookie
+          source-directory: ${{ env.OUTPUT_DIRECTORY }}/openff-cookie
 
       - name: Upload artifact
         if: ${{ matrix.os == 'ubuntu-latest' && matrix.last-n-minor-python-release == 0 }}
