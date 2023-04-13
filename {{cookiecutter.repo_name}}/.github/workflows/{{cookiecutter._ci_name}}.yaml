@@ -42,7 +42,7 @@ jobs:
         fail-fast: false
         matrix:
           os: [macOS-latest, ubuntu-latest, windows-latest]
-          python-version: ["3.9", "3.10"]
+          python-version: ["3.8", "3.9"]
 
     steps:
     - uses: actions/checkout@v3
@@ -53,20 +53,11 @@ jobs:
         df -h
         ulimit -a
 
-    # More info on options: https://github.com/conda-incubator/setup-miniconda
-    - name: Install conda dependencies
-      uses: conda-incubator/setup-miniconda@v2
-      with:
-        python-version: {{ '${{ matrix.python-version }}' }}
-        environment-file: devtools/conda-envs/test_env.yaml
-        add-pip-as-python-dependency: true
-        architecture: x64
-        mamba-version: "*"
-        channels: conda-forge, defaults
-        activate-environment: {{cookiecutter.repo_name}}-test
-        auto-update-conda: true
-        auto-activate-base: false
-        show-channel-urls: true
+    - name: Install environment
+        uses: mamba-org/provision-with-micromamba@main
+        with:
+          environment-file: devtools/conda-envs/test_env.yaml
+          extra-specs: {{ "python=${{ matrix.python-version }}" }}
 
     - name: Install package
       run: |
