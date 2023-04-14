@@ -2,9 +2,10 @@
 [//]: # (Badges)
 [![GitHub Actions Build Status](https://github.com/lilyminium/cookiecutter-openff/actions/workflows/gh-ci.yaml/badge.svg)](https://github.com/lilyminium/cookiecutter-openff/actions?query=workflow%3A%22Cookiecutter+CI%22)
 
+**Note: this repository is still under development**
 
 A [cookiecutter](https://github.com/audreyr/cookiecutter) template for those interested in developing
-packages based on MDAnalysis. Starting repositories can be created from this template so you can focus on what's important: the science!
+packages based on Open Force Field. Starting repositories can be created from this template so you can focus on what's important: the science!
 
 
 ## Requirements
