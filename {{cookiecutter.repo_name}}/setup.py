@@ -2,13 +2,14 @@
 {{cookiecutter.project_name}}
 {{cookiecutter.description}}
 """
-import versioneer
+
 import os
 import sys
 from setuptools import setup, find_packages
 
 sys.path.append(os.path.dirname(__file__))
 
+import versioneer  # noqa: E402
 
 short_description = "{{cookiecutter.description}}".strip().split("\n")[0]
 

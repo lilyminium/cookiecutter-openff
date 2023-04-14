@@ -7,11 +7,11 @@ inputs:
   target-repository:
     description: Target repository name
     required: true
-    default: mdakit-cookie
+    default: openff-cookie
   target-account:
     description: Target account name
     required: true
-    default: MDAnalysis
+    default: openforcefield
   github-username:
     description: GitHub username
     required: true
@@ -41,6 +41,8 @@ runs:
     
     - name: Install act
       uses: actionsflow/setup-act@v1
+      with:
+        version: '0.2.40'
     
     - name: Build Act image
       shell: bash

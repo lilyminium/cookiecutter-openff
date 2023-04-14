@@ -39,7 +39,7 @@ release = '0.1.0b'
 
 author = ", ".join(parse_authors(sort_alphabetically=True))
 now = datetime.datetime.now()
-copyright = f'2022-{now.year}, {author}'
+copyright = f'2023-{now.year}, {author}'
 
 
 # -- General configuration ---------------------------------------------------
@@ -94,10 +94,6 @@ html_theme = 'sphinx_rtd_theme'
 # further.  For a list of options available for each theme, see the
 # documentation.
 
-color = {'orange': '#FF9200',
-         'gray': '#808080',
-         'white': '#FFFFFF',
-         'black': '#000000', }
 html_theme_options = {
     'canonical_url': '',
     'logo_only': True,
@@ -117,7 +113,7 @@ html_theme_options = {
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
-html_css_files = ['custom.css']
+html_css_files = []
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
@@ -133,7 +129,7 @@ html_css_files = ['custom.css']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'MDAKitCookiecutterdoc'
+htmlhelp_basename = 'OpenFFCookiecutterdoc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -161,9 +157,9 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc,
-     'MDAKitCookiecutter.tex',
-     'MDAKit Cookiecutter Documentation',
-     'MDAnalysis', 'manual'),
+     'OpenFFCookiecutter.tex',
+     'OpenFF Cookiecutter Documentation',
+     'Open Force Field', 'manual'),
 ]
 
 
@@ -172,8 +168,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'mdakitcookiecutter',
-     'MDAKit Cookiecutter Documentation',
+    (master_doc, 'openff-cookiecutter',
+     'OpenFF Cookiecutter Documentation',
      [author], 1)
 ]
 
@@ -184,15 +180,15 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'MDAKitCookiecutter',
-     'MDAKit Cookiecutter Documentation',
-     author, 'MDAKitCookiecutter',
-     'A Cookiecutter which provides a template for packages based on MDAnalysis.',
+    (master_doc, 'OpenFFCookiecutter',
+     'OpenFF Cookiecutter Documentation',
+     author, 'OpenFFCookiecutter',
+     'A Cookiecutter which provides a template for packages based on Open Force Field.',
      'Miscellaneous'),
 ]
 
 
 # -- Extension configuration -------------------------------------------------
 rst_epilog = """
-.. |Cookiecutter_MDAKit_version| replace:: {0}
+.. |Cookiecutter_OpenFF_version| replace:: {0}
 """.format(version)

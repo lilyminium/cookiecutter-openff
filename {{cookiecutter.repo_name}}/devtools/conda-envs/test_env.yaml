@@ -13,6 +13,10 @@ dependencies:
   - pytest-xdist
   - codecov
 
+  # chemistry
+  - openff-toolkit-base
+  - rdkit
+
   #- pip:
   #  - codecov
 
