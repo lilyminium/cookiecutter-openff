@@ -28,10 +28,8 @@ Please see our documentation for more details on how to use the cookiecutter.
 
 ## Acknowledgments
 
-This cookiecutter is developed by MDAnalysis, based heavily off the
+This cookiecutter is developed by Open Force Field, based heavily off the
 [Cookiecutter for Computational Molecular Sciences (CMS) Python Packages](https://github.com/MolSSI/cookiecutter-cms)
 by Levi N. Naden and Jessica A. Nash
 from the [Molecular Sciences Software Institute (MolSSI)](http://molssi.org/) and
-Daniel G. A. Smith of [ENTOS](https://www.entos.ai/).
-
-The development of this repository is supported by a grant from the Chan Zuckerberg Initiative under an EOSS4 award.
+Daniel G. A. Smith of [ENTOS](https://www.entos.ai/), and the [MDAnalysis cookiecutter](https://github.com/mdanalysis/cookiecutter-mdakit).
