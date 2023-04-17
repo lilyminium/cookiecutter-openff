@@ -27,16 +27,16 @@ A configuration file for [Read The Docs](https://readthedocs.org/) (readthedocs.
 A configuration for automatically documenting OpenFF software with AutoSummary is included. The project is processed and documented as follows:
 
 1. A module (or package) is documented if and only if it satisfies all the following criteria:
-    a. Its parent module is documented, or it is the root module.
-    b. It is public (ie, its name does not begin with an underscore).
-    c. It is not listed in the `autosummary_context["exclude_modules"]` list in `conf.py`.
+    1. Its parent module is documented, or it is the root module.
+    2. It is public (ie, its name does not begin with an underscore).
+    3. It is not listed in the `autosummary_context["exclude_modules"]` list in `conf.py`.
 2. If a documented module has a `__all__` attribute that is a list of strings, its members will be documented if and only if their names appear in `__all__`.
 3. If a documented module does not have `__all__`, all its members that satisfy all the following criteria will be documented:
-    a. The member is public (ie, its name does not begin with an underscore)
-    b. The member is defined in the module rather than imported
+    1. The member is public (ie, its name does not begin with an underscore)
+    2. The member is defined in the module rather than imported
 4. Any member of a documented class that satisfies all the following criteria will be documented:
-    a. The member is public (ie, its name does not begin with an underscore)
-    b. The member is defined in the class being documented (ie, it is not inherited)
+    1. The member is public (ie, its name does not begin with an underscore)
+    2. The member is defined in the class being documented (ie, it is not inherited)
 
 This means it is usually not necessary to define `__all__`, except in cases when you want an imported object to be accessible in the API at a different point to where it is defined, or you want to document a private object. To document an inherited method without changing its behavior, define it in the child class without a docstring:
 
