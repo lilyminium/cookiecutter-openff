@@ -1,15 +1,23 @@
 # Compiling {{cookiecutter.project_name}}'s Documentation
 
 The docs for this project are built with [Sphinx](http://www.sphinx-doc.org/en/master/).
-To compile the docs, first ensure that Sphinx and the ReadTheDocs theme are installed.
+To compile the docs, first install the documentation dependencies into a new environment called `{{cookiecutter.repo_name}}-docs`:
 
 ```bash
-conda install sphinx sphinx_rtd_theme 
+mamba env create -n {{cookiecutter.repo_name}}-docs -f ../devtools/conda-envs/docs_env.yaml 
 ```
 
-Once installed, you can use the `Makefile` in this directory to compile static HTML pages by
+Once installed, you can use Sphinx to render the docs:
+
 ```bash
+mamba activate {{cookiecutter.repo_name}}-docs
 make html
+```
+
+Or from the root directory of the repository, use `sphinx-build` directly:
+
+```bash
+sphinx-build -j auto docs docs/_build
 ```
 
 The compiled docs will be in the `_build` directory and can be viewed by opening `index.html` (which may itself 
