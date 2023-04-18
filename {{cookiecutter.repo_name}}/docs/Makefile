@@ -4,7 +4,7 @@
 # You can set these variables from the command line.
 SPHINXOPTS    = -j=auto
 SPHINXBUILD   = sphinx-build
-SPHINXPROJ    = openff-nagl
+SPHINXPROJ    = {{cookiecutter.repo_name}}
 SOURCEDIR     = .
 BUILDDIR      = _build
 

@@ -13,7 +13,7 @@ $ mamba activate {{cookiecutter.repo_name}}
 
 If you do not have Conda or Mamba installed, see the [OpenFF installation documentation](openff.docs:install).
 
-[`{{cookiecutter.package_name}}`]: https://anaconda.org/conda-forge/openff-nagl
+[`{{cookiecutter.package_name}}`]: https://anaconda.org/conda-forge/{{cookiecutter.package_name}}
 
 :::{toctree}
 ---
