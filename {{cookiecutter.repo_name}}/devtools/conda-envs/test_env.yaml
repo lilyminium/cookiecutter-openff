@@ -1,4 +1,4 @@
-name: {{cookiecutter.repo_name}}-test
+name: {{cookiecutter.module_name}}-test
 channels:
   - conda-forge
   - defaults

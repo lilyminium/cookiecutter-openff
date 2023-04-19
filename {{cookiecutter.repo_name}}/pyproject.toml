@@ -43,5 +43,5 @@ doc = [
 [tool.pytest.ini_options]
 minversion = "6.0"
 testpaths = [
-    "{{cookiecutter.repo_name}}/tests",
+    "openff/{{cookiecutter.module_name}}/tests",
 ]

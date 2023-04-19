@@ -1,1 +1,1 @@
-{{cookiecutter.repo_name}}/_version.py export-subst
+openff/{{cookiecutter.module_name}}/_version.py export-subst
