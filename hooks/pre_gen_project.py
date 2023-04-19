@@ -62,7 +62,6 @@ import os
 REGEX_EMAIL = r"^[^@]+@[^@]+\.[^@]+$"
 REGEX_URL_COMPATIBLE = r"^[_\-a-zA-Z][_\-a-zA-Z0-9]+$"
 REGEX_PYTHON_COMPATIBLE = r"^[_a-zA-Z][_a-zA-Z0-9]+$"
-OPENFF_PROJECT_NAME = r"^OpenFF "
 OPENFF_REPO_NAME = r"^openff-[_\-a-z0-9]+$"
 
 
@@ -86,6 +85,5 @@ if __name__ == "__main__":
         REGEX_URL_COMPATIBLE, "{{ cookiecutter.github_host_account }}", "GitHub account"
     )
     validate(REGEX_PYTHON_COMPATIBLE, "{{ cookiecutter.module_name }}", "module name")
-    validate(OPENFF_PROJECT_NAME, "{{ cookiecutter.project_name }}", "project name")
     validate(OPENFF_REPO_NAME, "{{ cookiecutter.repo_name }}", "repo name")
     print(f"\nCreating '{{ cookiecutter.project_name }}' in {os.getcwd()}")
