@@ -11,7 +11,7 @@ $ mamba create -n {{cookiecutter.repo_name}} -c conda-forge {{cookiecutter.packa
 $ mamba activate {{cookiecutter.repo_name}}
 ```
 
-If you do not have Conda or Mamba installed, see the [OpenFF installation documentation](openff.docs:install).
+If you do not have Conda or Mamba installed, see the [OpenFF installation documentation](inv:openff.docs#install).
 
 [`{{cookiecutter.package_name}}`]: https://anaconda.org/conda-forge/{{cookiecutter.package_name}}
 
@@ -27,7 +27,7 @@ Overview <self>
 The autosummary directive renders to rST,
 so we must use eval-rst here
 -->
-:::{eval-rst}
+```eval-rst
 .. raw:: html
 
     <div style="display: None">
