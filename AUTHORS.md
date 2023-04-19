@@ -17,6 +17,9 @@ The rules for this file:
 -->
 
 **2022**
-- Lily Wang \<@lilyminium\>
-- Irfan Alibay \<@IAlibay\>
-- Fiona Naughton \<@fiona-naughton\>
+- Lily Wang <@lilyminium>
+- Irfan Alibay <@IAlibay>
+- Fiona Naughton <@fiona-naughton>
+
+**2023**
+- Josh Mitchell <@yoshanuikabundi>
