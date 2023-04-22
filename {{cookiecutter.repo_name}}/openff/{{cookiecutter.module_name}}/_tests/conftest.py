@@ -9,7 +9,7 @@ Global pytest fixtures
 
 import pytest
 
-from {{cookiecutter.import_path}}.tests.data.files import EXAMPLE_SDF_WITH_CHARGES
+from {{cookiecutter.import_path}}._tests.data.files import EXAMPLE_SDF_WITH_CHARGES
 
 
 @pytest.fixture

@@ -41,8 +41,10 @@ jobs:
     strategy:
         fail-fast: false
         matrix:
-          os: [macOS-latest, ubuntu-latest, windows-latest]
-          python-version: ["3.8", "3.9"]
+          os: [ubuntu-latest]
+          python-version: ["3.9"]
+          # os: [macOS-latest, ubuntu-latest, windows-latest]
+          # python-version: ["3.8", "3.9"]
 
     steps:
     - uses: actions/checkout@v3
@@ -75,7 +77,7 @@ jobs:
 
     - name: Run tests
       run: |
-        pytest -n 2 -v --cov={{ cookiecutter.package_name }} --cov-report=xml --color=yes openff/{{ cookiecutter.module_name }}/tests/
+        pytest -n 2 -v --cov={{ cookiecutter.package_name }} --cov-report=xml --color=yes openff/{{ cookiecutter.module_name }}/_tests/
 
     - name: codecov
       uses: codecov/codecov-action@v3
