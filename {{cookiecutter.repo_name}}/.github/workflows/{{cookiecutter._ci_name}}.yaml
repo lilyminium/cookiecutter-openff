@@ -75,7 +75,7 @@ jobs:
 
     - name: Run tests
       run: |
-        pytest -n 2 -v --cov={{ cookiecutter.package_name }} --cov-report=xml --color=yes {{ cookiecutter.package_name }}/tests/
+        pytest -n 2 -v --cov={{ cookiecutter.package_name }} --cov-report=xml --color=yes openff/{{ cookiecutter.module_name }}/_tests/
 
     - name: codecov
       uses: codecov/codecov-action@v3

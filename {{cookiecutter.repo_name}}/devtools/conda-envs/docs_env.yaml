@@ -1,4 +1,4 @@
-name: {{cookiecutter.repo_name}}-docs
+name: {{cookiecutter.module_name}}-docs
 channels:
   - conda-forge
   - defaults

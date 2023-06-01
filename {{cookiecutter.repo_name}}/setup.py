@@ -5,7 +5,7 @@
 
 import os
 import sys
-from setuptools import setup, find_packages
+from setuptools import setup, find_namespace_packages
 
 sys.path.append(os.path.dirname(__file__))
 
@@ -39,7 +39,7 @@ setup(
     # Which Python importable modules should be included when your package is installed
     # Handled automatically by setuptools. Use 'exclude' to prevent some specific
     # subpackage(s) from being added, if needed
-    packages=find_packages(),
+    packages=find_namespace_packages(include=['openff.*']),
 
     # Optional include package data to ship with your package
     # Customize MANIFEST.in if the general case does not suit your needs

@@ -19,6 +19,12 @@ If possible, we strongly recommend that you use
 Below we provide instructions both for `conda` and
 for `pip`.
 
+#### From Conda Forge
+
+```
+conda install -c conda-forge {{cookiecutter.package_name}}
+```
+
 #### With conda
 
 Ensure that you have [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html) installed.
@@ -26,15 +32,15 @@ Ensure that you have [conda](https://docs.conda.io/projects/conda/en/latest/user
 Create a virtual environment and activate it:
 
 ```
-conda create --name {{cookiecutter.repo_name}}
-conda activate {{cookiecutter.repo_name}}
+conda create --name {{cookiecutter.module_name}}
+conda activate {{cookiecutter.module_name}}
 ```
 
 Install the development and documentation dependencies:
 
 ```
-conda env update --name {{cookiecutter.repo_name}} --file devtools/conda-envs/test_env.yaml
-conda env update --name {{cookiecutter.repo_name}} --file docs/requirements.yaml
+conda env update --name {{cookiecutter.module_name}} --file devtools/conda-envs/test_env.yaml
+conda env update --name {{cookiecutter.module_name}} --file docs/requirements.yaml
 ```
 
 Build this package from source:

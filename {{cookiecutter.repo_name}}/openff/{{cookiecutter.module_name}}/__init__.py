@@ -3,7 +3,7 @@
 """
 
 # Add imports here
-from .{{cookiecutter.package_name}} import canvas
+from .{{cookiecutter.module_name}} import canvas
 
 # By default, imported items are not rendered in the docs unless they are
 # included in __all__.

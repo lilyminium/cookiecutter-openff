@@ -17,7 +17,7 @@ import os
 import sys
 
 sys.path.insert(0, os.path.abspath(".."))
-import {{cookiecutter.package_name}}
+import {{cookiecutter.import_path}}
 
 
 # -- Project information -----------------------------------------------------
@@ -31,9 +31,9 @@ copyright = (
 author = "{{cookiecutter.author_name}}"
 
 # The short X.Y version
-version = {{cookiecutter.package_name}}.__version__
+version = {{cookiecutter.import_path}}.__version__
 # The full version, including alpha/beta/rc tags
-release = {{cookiecutter.package_name}}.__version__
+release = {{cookiecutter.import_path}}.__version__
 
 
 # -- General configuration ---------------------------------------------------
@@ -69,7 +69,7 @@ autosummary_ignore_module_all = False
 autosummary_context = {
     # Modules to exclude from API docs
     "exclude_modules": [
-        "{{cookiecutter.package_name}}.tests",
+        "{{cookiecutter.import_path}}.tests",
     ],
     "show_inheritance": True,
     "show_inherited_members": False,
@@ -188,7 +188,7 @@ from importlib.util import find_spec as find_import_spec
 if find_import_spec("notfound"):
     extensions.append("notfound.extension")
 
-    notfound_urls_prefix = "/projects/{{cookiecutter.package_name}}/en/stable/"
+    notfound_urls_prefix = "/projects/{{cookiecutter.module_name}}/en/stable/"
     notfound_context = {
         "title": "404: File Not Found",
         "body": f"""
@@ -283,7 +283,7 @@ html_sidebars = {
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "{{cookiecutter.repo_name}}doc"
+htmlhelp_basename = "{{cookiecutter.module_name}}doc"
 
 
 # -- Options for LaTeX output ------------------------------------------------

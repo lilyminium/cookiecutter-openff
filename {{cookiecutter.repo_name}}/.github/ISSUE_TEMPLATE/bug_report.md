@@ -19,7 +19,7 @@ about: Create a report to help us improve
 <!-- Show us how to reproduce the failure. If you can, use trajectory files from the test data. Use the code snipped below as a starting point. -->
 
 ``` python
-import {{ cookiecutter.repo_name }}
+import {{ cookiecutter.import_path }}
 
 ...
 
@@ -27,7 +27,7 @@ import {{ cookiecutter.repo_name }}
 
 ## Current environment ##
 
-- Which version are you using? (run `python -c "import {{ cookiecutter.repo_name }}; print({{ cookiecutter.repo_name }}.__version__)"`)
+- Which version are you using? (run `python -c "import {{ cookiecutter.import_path }}; print({{ cookiecutter.import_path }}.__version__)"`)
 - Which version of Python (`python -V`)?
 - Which operating system?
 - What is the output of `pip list`?

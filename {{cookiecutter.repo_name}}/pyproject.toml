@@ -1,6 +1,7 @@
 [build-system]
 requires = [
   "setuptools >= 40.9.0",
+  "versioneer[toml]==0.26",
   "wheel",
 ]
 build-backend = "setuptools.build_meta"
@@ -43,5 +44,8 @@ doc = [
 [tool.pytest.ini_options]
 minversion = "6.0"
 testpaths = [
-    "{{cookiecutter.repo_name}}/tests",
+    "openff/{{cookiecutter.module_name}}/_tests",
 ]
+
+[tool.setuptools.packages.find]
+include = ["openff.*"]

@@ -1,16 +1,16 @@
 # Compiling {{cookiecutter.project_name}}'s Documentation
 
 The docs for this project are built with [Sphinx](http://www.sphinx-doc.org/en/master/).
-To compile the docs, first install the documentation dependencies into a new environment called `{{cookiecutter.repo_name}}-docs`:
+To compile the docs, first install the documentation dependencies into a new environment called `{{cookiecutter.module_name}}-docs`:
 
 ```bash
-mamba env create -n {{cookiecutter.repo_name}}-docs -f ../devtools/conda-envs/docs_env.yaml 
+mamba env create -n {{cookiecutter.module_name}}-docs -f ../devtools/conda-envs/docs_env.yaml 
 ```
 
 Once installed, you can use Sphinx to render the docs:
 
 ```bash
-mamba activate {{cookiecutter.repo_name}}-docs
+mamba activate {{cookiecutter.module_name}}-docs
 make html
 ```
 
